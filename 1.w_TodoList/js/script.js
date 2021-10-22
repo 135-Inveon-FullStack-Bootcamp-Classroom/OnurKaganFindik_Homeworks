@@ -25,8 +25,12 @@ function eventListeners(){
     //add task event
     form.addEventListener('submit', addNewItem);
 
-    //delete task event
+    //delete Items event
     taskList.addEventListener('click', deleteItem);
+
+    //delete all items
+    btnDeleteAll.addEventListener('click', deleteAllItems);
+
 
 }
 
@@ -67,5 +71,12 @@ function deleteItem(e){
         if(confirm('Görevi silinsin mi?')){
             e.target.parentElement.parentElement.remove();
         }
+    }
+}
+
+//delete all items
+function deleteAllItems(e){
+    if(confirm('Tüm görevler silinsin mi?')){
+        taskList.innerHTML='';
     }
 }
