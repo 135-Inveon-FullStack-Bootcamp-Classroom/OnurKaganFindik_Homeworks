@@ -6,9 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inveon Todo App</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 <body>
+<div class="container p-3">
+    <h1 class="app-title" id="header">Todo App</h1>
+    <div class="card">
+        <div class="card-header">
+            Yeni Görev
+        </div>
+        <form id="addTaskForm">
+            <div class="input-group mt-3">
+            <input id="txtTaskName" type="text" class="form-control" placeholder="Yeni bir görev giriniz">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit" id="btnAddNewTask">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            Görev Listesi
+            <a id="btnDeleteAll" href="#" class="btn btn-outline-danger btn-sm delete-all float-end">
+                Delete All
+            </a>
+        </div>
+        <ul id="task-list" class="list-group">
 
+        </ul>
+    </div>
+
+</div>
 </body>
 </html>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
