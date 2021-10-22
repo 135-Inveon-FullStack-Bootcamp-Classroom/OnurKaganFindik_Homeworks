@@ -18,13 +18,19 @@ const btnDeleteAll= document.querySelector('#btnDeleteAll');
 const taskList= document.querySelector('#task-list');
 
 
+//call event listeners
 eventListeners();
 
 function eventListeners(){
+    //add task event
     form.addEventListener('submit', addNewItem);
+
+    //delete task event
+    taskList.addEventListener('click', deleteItem);
+
 }
 
-
+//add new item
 function addNewItem(e){
     if(input.value ===''){
         alert('Bir görev giriniz.');
@@ -53,4 +59,13 @@ function addNewItem(e){
 
     e.prenventDefault();
 
+}
+
+//delete item
+function deleteItem(e){
+    if(e.target.parentElement.classList.contains('delete-item')){
+        if(confirm('Görevi silinsin mi?')){
+            e.target.parentElement.parentElement.remove();
+        }
+    }
 }
