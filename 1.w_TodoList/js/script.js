@@ -1,12 +1,12 @@
 /**
- * 1. todo ekleme
- * 2. tamamla butonu (complete)
- * 3. sil butonu olacak
- * 4. kayıt edilsin (localStorage, cookie) - sayfa yenilendiği zaman son hali yeniden görünsün
+ * +1. todo ekleme
+ * +2. tamamla butonu (complete)
+ * +3. sil butonu olacak
+ * +4. kayıt edilsin (localStorage, cookie) - sayfa yenilendiği zaman son hali yeniden görünsün
  *
  * --- optional
  * 1. güncelleme
- * 2. toplu silme
+ * +2. toplu silme
  * 3. eklenme - tamamlanma tarihi
  * 4. tamamlanma tarihi gelince alert version
  * 5. kategoriler koyulabilir -> spor, iş vs.
@@ -16,7 +16,10 @@ const form= document.querySelector('form');
 const input= document.querySelector('#txtTaskName');
 const btnDeleteAll= document.querySelector('#btnDeleteAll');
 const taskList= document.querySelector('#task-list');
+const list = document.querySelector('ul');
 let items;
+
+
 
 // load items
 loadItems();
@@ -28,16 +31,27 @@ eventListeners();
 function eventListeners(){
     //add task event
     form.addEventListener('submit', addNewItem);
-
+    
     //delete Items event
     taskList.addEventListener('click', deleteItem);
-
+    
     //delete all items
     btnDeleteAll.addEventListener('click', deleteAllItems);
-
+    
+    
+    // Completed symbol when clicking on a list item
+    list.addEventListener('click', thisCompleted , false);
 
 }
 
+//complate item
+function thisCompleted(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }
+
+ // load items 
 function loadItems() {
     items = getItemsFromLS();
     items.forEach(function (item) {
@@ -73,6 +87,7 @@ function deleteItemFromLS(text){
     localStorage.setItem('items',JSON.stringify(items));
 }
 
+// create item
 function createItem(text) {
     // create li
     const li = document.createElement('li');
@@ -83,7 +98,7 @@ function createItem(text) {
     const a = document.createElement('a');
     a.classList = 'delete-item float-right';
     a.setAttribute('href', '#');
-    a.innerHTML = '<i class="fas fa-times"></i>';
+    a.innerHTML = ' <i class="fas fa-times"></i>';
 
     // add a to li
     li.appendChild(a);
@@ -91,7 +106,9 @@ function createItem(text) {
     // add li to ul
     taskList.appendChild(li);
 
+
 }
+
 
 //add new item
 function addNewItem(e){
