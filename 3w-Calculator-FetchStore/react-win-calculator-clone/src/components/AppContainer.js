@@ -18,6 +18,7 @@ const styles = {
   },
 };
 
+// describtion: AppContainer is the main container of the application.
 
 const AppContainer = ({ children }) => {
   console.log({ children });

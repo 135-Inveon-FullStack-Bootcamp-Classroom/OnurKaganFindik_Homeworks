@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import { CalcContext } from "../contexts/CalcContext";
 
+// Styles
+
 const styles = {
   keyContainer: {
     width: '24.2%',
@@ -16,6 +18,8 @@ const styles = {
     fontSize: 15,
   },
 };
+
+//description: returns the style of the key when hovered
 
 const getHoveredStyle = (isBlue) => {
   let hoveredStyle = { cursor: "pointer", backgroundColor: "#999" };

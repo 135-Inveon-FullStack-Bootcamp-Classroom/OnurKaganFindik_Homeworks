@@ -23,6 +23,8 @@ const styles = {
   },
 };
 
+// description: ScreenSection component is used to display the current calculation
+
 const ScreenSection = () => {
   const { mainText, lastResult, currentOperation } = useContext(CalcContext);
 
