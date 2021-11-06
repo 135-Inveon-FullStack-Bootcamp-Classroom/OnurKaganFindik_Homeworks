@@ -1,3 +1,5 @@
+# Uygulamayı https://okf-react-fake-store.netlify.app/ adresinden kontrol edebilirsiniz
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
