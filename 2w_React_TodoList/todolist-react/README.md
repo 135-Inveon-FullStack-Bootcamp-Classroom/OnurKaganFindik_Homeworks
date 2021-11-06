@@ -1,4 +1,4 @@
-# Uygulamyı https://okf-react-todoapp.netlify.app/ adresinden kontrol edebilirsiniz
+# Uygulamayı https://okf-react-todoapp.netlify.app/ adresinden kontrol edebilirsiniz
 
 
 # Getting Started with Create React App
