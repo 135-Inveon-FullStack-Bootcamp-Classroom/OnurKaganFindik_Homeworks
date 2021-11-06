@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+
+body{
+    font-family: 'Stylish', sans-serif;
+    background-color: #000;
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: aqua;
+    text-align: center;
+    margin: 0 0 2;
+    font-family: 'Stylish', sans-serif;
+
+}
+h5{
+    color: aqua;
+    text-align: center;
+}
+
+p{
+    color: aqua;
+    text-align: center;
+}
+.container{
+/*background-color: rgb(253, 253, 255);*/
+max-width: 1300px;
+margin: 0 auto;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+.box{
+    width: 28%;
+    height: 28%;
+    /* background-color: burlywood; */
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px white;
+}
+h5{
+  color: #ffff;
+  text-align: center;
+  font-family: 'Stylish', sans-serif;
+}
+p{
+  color:palegreen;
+  font: size 0.9rem; ;
+}
+img{
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
