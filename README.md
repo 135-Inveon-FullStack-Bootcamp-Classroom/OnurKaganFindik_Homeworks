@@ -4,3 +4,6 @@
 
 
 ## 2. Hafta React TodoApp ödevi; Ödevde kullanılan teknolojiler; Html, Css, Boostrap, JavaScript, React.Js. ==> [![Netlify Status](https://api.netlify.com/api/v1/badges/42ba21fe-b03a-4c33-82f9-6d5f84cf5c38/deploy-status)](https://okf-react-todoapp.netlify.app/)
+
+
+## 3. Hafta React FakeStore ödevi; Ödevde kullanılan teknolojiler; Html, Css, JavaScript, React.Js. ==> [![Netlify Status](https://api.netlify.com/api/v1/badges/42ba21fe-b03a-4c33-82f9-6d5f84cf5c38/deploy-status)](https://okf-react-fake-store.netlify.app/)
