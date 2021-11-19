@@ -30,7 +30,6 @@ namespace Inheritance
             dog.SetLifeExpectancy(15);
             dog.Species();
             dog.Speak();
-
         }
     }
 }

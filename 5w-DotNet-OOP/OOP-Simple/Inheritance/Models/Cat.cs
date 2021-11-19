@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritance.Models
 {
@@ -16,7 +12,6 @@ namespace Inheritance.Models
         }
         public override void Speak()
         {
-
             string name = GetName() == null ? "Ad belirtilmemiş" : GetName();
             int life = GetLifeExpentancy();
 
@@ -25,10 +20,10 @@ namespace Inheritance.Models
 
         public override void Species()
         {
-                string[] species = { " Siyam", "Tekir", "Maine Coon", "Munchkin" };
+            string[] species = { " Siyam", "Tekir", "Maine Coon", "Munchkin" };
 
-                Random rnd = new Random();
-                Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
+            Random rnd = new Random();
+            Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
         }
     }
 }

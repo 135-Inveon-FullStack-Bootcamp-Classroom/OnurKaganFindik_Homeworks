@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritance.Models
 {
@@ -23,9 +19,7 @@ namespace Inheritance.Models
             _name = name;
             lifeExpectancy = _life;
         }
-
         public abstract void Species();
-
 
         //Methods are not encapsulated so they can be accessed from other classes.
         public string GetName()
@@ -50,10 +44,8 @@ namespace Inheritance.Models
 
         //marked "virtual" key so that this method can override in other classes
         public virtual void Speak()
-
         {
             Console.WriteLine($"{name} isimli hayvanın tahmini yaşama ömrü {lifeExpectancy} yıldır.");
         }
-
     }
 }

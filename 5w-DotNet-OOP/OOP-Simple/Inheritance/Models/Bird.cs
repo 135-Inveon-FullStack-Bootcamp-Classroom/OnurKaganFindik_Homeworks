@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritance.Models
 {
     public class Bird : Pet
     {
-
-
-
         public override void Speak()
         {
             string name = GetName() == null ? "Ad belirtilmemiş" : GetName();
@@ -21,12 +14,10 @@ namespace Inheritance.Models
 
         public override void Species()
         {
-        
-                string[] species = { " Papağan", "Muhabbet Kuşu", "Hint Bülbülü", "Kanarya" };
+            string[] species = { " Papağan", "Muhabbet Kuşu", "Hint Bülbülü", "Kanarya" };
 
-                Random rnd = new Random();
-                Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
-         
+            Random rnd = new Random();
+            Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
         }
     }
 }
