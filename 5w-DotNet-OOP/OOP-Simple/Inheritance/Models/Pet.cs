@@ -12,7 +12,6 @@ namespace Inheritance.Models
         private string name;
         private int lifeExpectancy;
 
-        //This constructor is used to 
         public Pet()
         {
 
@@ -36,12 +35,12 @@ namespace Inheritance.Models
             name = _name;
         }
 
-        public int getLifeExpentancy()
+        public int GetLifeExpentancy()
         {
             return lifeExpectancy;
         }
 
-        public void setLifeExpectancy(int life)
+        public void SetLifeExpectancy(int life)
         {
             lifeExpectancy = life;
         }
@@ -50,7 +49,7 @@ namespace Inheritance.Models
         public virtual void Speak()
 
         {
-            Console.WriteLine($"{name} isimli hayvanın tahmini yaşama örü {lifeExpectancy} yıldır.");
+            Console.WriteLine($"{name} isimli hayvanın tahmini yaşama ömrü {lifeExpectancy} yıldır.");
         }
 
     }
