@@ -22,5 +22,13 @@ namespace Inheritance.Models
 
             Console.WriteLine($"{name}({this.GetType().Name}) isimli hayvan tahmini {life} yıl kadar yaşayabilir.");
         }
+
+        public override void Species()
+        {
+                string[] species = { " Siyam", "Tekir", "Maine Coon", "Munchkin" };
+
+                Random rnd = new Random();
+                Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
+        }
     }
 }

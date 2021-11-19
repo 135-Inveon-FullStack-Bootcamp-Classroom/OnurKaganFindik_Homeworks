@@ -9,13 +9,7 @@ namespace Inheritance.Models
     public class Bird : Pet
     {
 
-        public void Species()
-        {
-            string[] species = { " Papağan", "Muhabbet Kuşu", "Hint Bülbülü", "Kanarya" };
 
-            Random rnd = new Random();
-            Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
-        }
 
         public override void Speak()
         {
@@ -23,6 +17,16 @@ namespace Inheritance.Models
             int life = GetLifeExpentancy();
 
             Console.WriteLine($"{name}({this.GetType().Name}) isimli hayvan tahmini {life} yıl kadar yaşayabilir.");
+        }
+
+        public override void Species()
+        {
+        
+                string[] species = { " Papağan", "Muhabbet Kuşu", "Hint Bülbülü", "Kanarya" };
+
+                Random rnd = new Random();
+                Console.WriteLine($"Tür: {species[rnd.Next(species.Length)]}");
+         
         }
     }
 }

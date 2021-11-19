@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Inveon Bootcamp\\Homework\\OnurKaganFindik-HomeWork\\5w-DotNet-OOP\\OOP-Simple\\Inheritance\\Inheritance.csproj",
-      "projectName": "Inheritance",
-      "projectPath": "D:\\Inveon Bootcamp\\Homework\\OnurKaganFindik-HomeWork\\5w-DotNet-OOP\\OOP-Simple\\Inheritance\\Inheritance.csproj",
+      "projectUniqueName": "D:\\Inveon Bootcamp\\Homework\\OnurKaganFindik-HomeWork\\5w-DotNet-OOP\\OOP-Simple\\Inheritance\\PetOop.csproj",
+      "projectName": "PetOop",
+      "projectPath": "D:\\Inveon Bootcamp\\Homework\\OnurKaganFindik-HomeWork\\5w-DotNet-OOP\\OOP-Simple\\Inheritance\\PetOop.csproj",
       "packagesPath": "C:\\Users\\onurk\\.nuget\\packages\\",
       "outputPath": "D:\\Inveon Bootcamp\\Homework\\OnurKaganFindik-HomeWork\\5w-DotNet-OOP\\OOP-Simple\\Inheritance\\obj\\",
       "projectStyle": "PackageReference",

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inheritance.Models
 {
-    public class Pet
+    public abstract class Pet
     {
         //Variables are encapsulated so they cannot be accessed from the other classes.
         private string name;
@@ -23,6 +23,9 @@ namespace Inheritance.Models
             _name = name;
             lifeExpectancy = _life;
         }
+
+        public abstract void Species();
+
 
         //Methods are not encapsulated so they can be accessed from other classes.
         public string GetName()

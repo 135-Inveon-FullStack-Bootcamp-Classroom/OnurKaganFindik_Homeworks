@@ -1,0 +1,16 @@
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\PetOop.exe
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\PetOop.deps.json
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\PetOop.runtimeconfig.json
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\PetOop.runtimeconfig.dev.json
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\PetOop.dll
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\ref\PetOop.dll
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\bin\Debug\net5.0\PetOop.pdb
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.AssemblyInfoInputs.cache
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.AssemblyInfo.cs
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.csproj.CoreCompileInputs.cache
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.dll
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\ref\PetOop.dll
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.pdb
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.genruntimeconfig.cache
+D:\Inveon Bootcamp\Homework\OnurKaganFindik-HomeWork\5w-DotNet-OOP\OOP-Simple\Inheritance\obj\Debug\net5.0\PetOop.csproj.AssemblyReference.cache
