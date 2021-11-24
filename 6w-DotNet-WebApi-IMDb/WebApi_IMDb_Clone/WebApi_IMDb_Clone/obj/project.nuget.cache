@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "2d2hUS0mgPCoJU8XpSVYsqxBXCdUkZ6c/cjMz6MsIWezh/qxJ0ySOfbNz0m06y5IWVJkBFCFj5StEFUyJOvLVA==",
+  "success": true,
+  "projectFilePath": "D:\\Inveon Bootcamp\\Homework\\OnurKaganFindik-HomeWork\\6w-DotNet-WebApi-IMDb\\WebApi_IMDb_Clone\\WebApi_IMDb_Clone\\WebApi_IMDb_Clone.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\onurk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\onurk\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\onurk\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\onurk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\onurk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\onurk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
