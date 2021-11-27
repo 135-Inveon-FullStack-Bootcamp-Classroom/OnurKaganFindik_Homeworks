@@ -24,10 +24,10 @@ namespace WebApi_IMDb_Clone.Entities
                 new Category() { Id = 3, CategoryName = "Category3" }
                 );
 
-            modelBuilder.Entity<Movies>().HasData(
-                new Movies() { Id = 1, DirectorFullName = "Director Name", MovieName = "Movie Name 1", Description = "Descrip descrip", ReleaseDate = "01/01/2021" },
-                 new Movies() { Id = 2, DirectorFullName = "Director Name", MovieName = "Movie Name 2", Description = "Descrip descrip", ReleaseDate = "01/01/2021" },
-                 new Movies() { Id = 3, DirectorFullName = "Director Name", MovieName = "Movie Name 3", Description = "Descrip descrip", ReleaseDate = "01/01/2021" }
+            modelBuilder.Entity<Movie>().HasData(
+                new Movie() { Id = 1, DirectorFullName = "Director Name", MovieName = "Movie Name 1", Description = "Descrip descrip", ReleaseDate = "01/01/2021" },
+                 new Movie() { Id = 2, DirectorFullName = "Director Name", MovieName = "Movie Name 2", Description = "Descrip descrip", ReleaseDate = "01/01/2021" },
+                 new Movie() { Id = 3, DirectorFullName = "Director Name", MovieName = "Movie Name 3", Description = "Descrip descrip", ReleaseDate = "01/01/2021" }
                 );
 
             modelBuilder.Entity<Production>().HasData(
@@ -39,7 +39,7 @@ namespace WebApi_IMDb_Clone.Entities
 
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Movies> Movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
         public DbSet<Production> Productions { get; set; }
 
 

@@ -20,14 +20,14 @@ namespace WebApi_IMDb_Clone.Controllers
 
         // GET: api/Movies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movies>>> GetMovies()
+        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
         {
             return await _context.Movies.ToListAsync();
         }
 
         // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movies>> GetMovies(int id)
+        public async Task<ActionResult<Movie>> GetMovies(int id)
         {
             var movies = await _context.Movies.FindAsync(id);
 
@@ -42,7 +42,7 @@ namespace WebApi_IMDb_Clone.Controllers
         // PUT: api/Movies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMovies(int id, Movies movies)
+        public async Task<IActionResult> PutMovies(int id, Movie movies)
         {
             if (id != movies.Id)
             {
@@ -73,7 +73,7 @@ namespace WebApi_IMDb_Clone.Controllers
         // POST: api/Movies
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Movies>> PostMovies(Movies movies)
+        public async Task<ActionResult<Movie>> PostMovies(Movie movies)
         {
             _context.Movies.Add(movies);
             await _context.SaveChangesAsync();

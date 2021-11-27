@@ -1,6 +1,6 @@
 ﻿namespace WebApi_IMDb_Clone.Entities
 {
-    public class Movies
+    public class Movie
     {
         public int Id { get; set; }
         public string MovieName { get; set; }
