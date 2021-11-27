@@ -34,8 +34,8 @@ namespace WebApi_IMDb_Clone.Entities
                  new Movies() { Id = 3, DirectorFullName = "Director Name", MovieName = "Movie Name 3", Description = "Descrip descrip", ReleaseDate = "01/01/2021" }
                 );
 
-            modelBuilder.Entity<Production>().HasData( 
-                new Production() { Id= 1, ProductionName= "A Company"},
+            modelBuilder.Entity<Production>().HasData(
+                new Production() { Id = 1, ProductionName = "A Company" },
                 new Production() { Id = 2, ProductionName = "B Company" }
                 );
         }

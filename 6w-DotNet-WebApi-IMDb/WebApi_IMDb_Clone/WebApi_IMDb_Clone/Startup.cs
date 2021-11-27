@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi_IMDb_Clone.Entities;
 
 namespace WebApi_IMDb_Clone
 {
@@ -32,6 +34,7 @@ namespace WebApi_IMDb_Clone
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi_IMDb_Clone", Version = "v1" });
             });
+            services.AddDbContext<ApplicationDbContext>(optionsBuilder => optionsBuilder.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
