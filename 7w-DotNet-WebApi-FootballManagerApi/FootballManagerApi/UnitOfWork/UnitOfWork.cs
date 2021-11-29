@@ -8,7 +8,7 @@ namespace FootballManagerApi.UnitOfWork
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public UnitOfWork(ITeamService teamService, IFootballerService footballerService, ICoachService coachService, ApplicationDbContext dbContext, ITacticService tacticService, IManagementPositionService managementPositionService, IManagerService managerService, INationalTeamService nationalTeamService)
+        public UnitOfWork(ITeamService teamService, IFootballerService footballerService, ICoachService coachService, ApplicationDbContext dbContext, ITacticService tacticService, IManagementPositionService managementPositionService, IManagerService managerService, INationalTeamService nationalTeamService, IPositionService positionService)
         {
             _dbContext = dbContext;
             this.FootballerService = footballerService;
@@ -18,6 +18,7 @@ namespace FootballManagerApi.UnitOfWork
             this.ManagementPositionService = managementPositionService;
             this.ManagerService = managerService;
             this.NationalTeamService = nationalTeamService;
+            this.PositionService = positionService;
         }
 
         public ITeamService TeamService { get; set; }
@@ -27,6 +28,7 @@ namespace FootballManagerApi.UnitOfWork
         public IManagementPositionService ManagementPositionService { get; set; }
         public IManagerService ManagerService { get; set; }
         public INationalTeamService NationalTeamService { get; set; }
+        public IPositionService PositionService { get; set; }
 
         public async Task SaveChangesAsync()
         {
