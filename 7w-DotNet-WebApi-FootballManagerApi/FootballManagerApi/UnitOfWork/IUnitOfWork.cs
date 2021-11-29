@@ -10,6 +10,7 @@ namespace FootballManagerApi.UnitOfWork
         public IFootballerService FootballerService { get; set; }
         public ITacticService TacticService { get; set; }
         public IManagementPositionService ManagementPositionService { get; set; }
+        public IManagerService ManagerService { get; set; }
 
 
         Task SaveChangesAsync();
