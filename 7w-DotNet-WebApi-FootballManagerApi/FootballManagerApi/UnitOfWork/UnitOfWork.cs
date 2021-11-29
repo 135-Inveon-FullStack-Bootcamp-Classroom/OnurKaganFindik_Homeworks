@@ -8,17 +8,19 @@ namespace FootballManagerApi.UnitOfWork
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public UnitOfWork(ITeamService teamService, IFootballerService footballerService, ICoachService coachService, ApplicationDbContext dbContext)
+        public UnitOfWork(ITeamService teamService, IFootballerService footballerService, ICoachService coachService, ApplicationDbContext dbContext, ITacticService tacticService)
         {
             _dbContext = dbContext;
             this.FootballerService = footballerService;
             this.CoachService = coachService;
             this.TeamService = teamService;
+            this.TacticService = tacticService;
         }
 
         public ITeamService TeamService { get; set; }
         public IFootballerService FootballerService { get; set; }
         public ICoachService CoachService { get; set; }
+        public ITacticService TacticService { get; set; }
 
         public async Task SaveChangesAsync()
         {
