@@ -1,5 +1,5 @@
-﻿using System;
-using FootballManagerApi.EntityBases;
+﻿using FootballManagerApi.EntityBases;
+using System;
 
 namespace FootballManagerApi.Entities
 {
