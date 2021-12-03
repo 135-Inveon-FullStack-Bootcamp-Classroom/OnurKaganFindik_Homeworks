@@ -1,5 +1,6 @@
 ﻿using FootballManagerApi.Data;
 using FootballManagerApi.Entities;
+using FootballManagerApi.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -12,95 +13,50 @@ namespace FootballManagerApi.Controllers
     [ApiController]
     public class ManagementPositionsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ManagementPositionsController(ApplicationDbContext context)
+        public ManagementPositionsController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: api/ManagementPositions
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ManagementPosition>>> GetManagementPositions()
         {
-            return await _context.ManagementPositions.ToListAsync();
+            var managementPosition = await _unitOfWork.ManagementPositionService.GetAllAsync();
+            return Ok(managementPosition);
         }
 
-        // GET: api/ManagementPositions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ManagementPosition>> GetManagementPosition(int id)
         {
-            var managementPosition = await _context.ManagementPositions.FindAsync(id);
-
-            if (managementPosition == null)
-            {
-                return NotFound();
-            }
-
-            return managementPosition;
+            var managementPosition = await _unitOfWork.ManagementPositionService.GetAsync(id);
+            return Ok(managementPosition);
         }
 
         // PUT: api/ManagementPositions/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutManagementPosition(int id, ManagementPosition managementPosition)
         {
-            if (id != managementPosition.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(managementPosition).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ManagementPositionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            await _unitOfWork.ManagementPositionService.UpdateAsync(id, managementPosition);
             return NoContent();
         }
 
         // POST: api/ManagementPositions
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<ManagementPosition>> PostManagementPosition(ManagementPosition managementPosition)
         {
-            _context.ManagementPositions.Add(managementPosition);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetManagementPosition", new { id = managementPosition.Id }, managementPosition);
+            var createdManagementPosition = await _unitOfWork.ManagementPositionService.CreateAsync(managementPosition);
+            return Ok(createdManagementPosition);
         }
 
         // DELETE: api/ManagementPositions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteManagementPosition(int id)
         {
-            var managementPosition = await _context.ManagementPositions.FindAsync(id);
-            if (managementPosition == null)
-            {
-                return NotFound();
-            }
-
-            _context.ManagementPositions.Remove(managementPosition);
-            await _context.SaveChangesAsync();
-
+            await _unitOfWork.ManagementPositionService.DeleteAsync(id);
             return NoContent();
-        }
-
-        private bool ManagementPositionExists(int id)
-        {
-            return _context.ManagementPositions.Any(e => e.Id == id);
         }
     }
 }
