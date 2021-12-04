@@ -1,5 +1,6 @@
 ﻿using FootballManagerApi.Data;
 using FootballManagerApi.Entities;
+using FootballManagerApi.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -12,95 +13,60 @@ namespace FootballManagerApi.Controllers
     [ApiController]
     public class NationalTeamsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public NationalTeamsController(ApplicationDbContext context)
+        public NationalTeamsController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: api/NationalTeams
         [HttpGet]
         public async Task<ActionResult<IEnumerable<NationalTeam>>> GetNationalTeams()
         {
-            return await _context.NationalTeams.ToListAsync();
+            var nationalTeams = await _unitOfWork.NationalTeamService.GetAllAsync();
+            return Ok(nationalTeams);
         }
 
         // GET: api/NationalTeams/5
         [HttpGet("{id}")]
         public async Task<ActionResult<NationalTeam>> GetNationalTeam(int id)
         {
-            var nationalTeam = await _context.NationalTeams.FindAsync(id);
-
-            if (nationalTeam == null)
-            {
-                return NotFound();
-            }
-
-            return nationalTeam;
+            var nationalTeams = await _unitOfWork.NationalTeamService.GetAsync(id);
+            return Ok(nationalTeams);
         }
 
         // PUT: api/NationalTeams/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutNationalTeam(int id, NationalTeam nationalTeam)
+        public async Task<IActionResult> PutNationalTeam(int id, NationalTeam nationalTeams)
         {
-            if (id != nationalTeam.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(nationalTeam).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!NationalTeamExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            await _unitOfWork.NationalTeamService.UpdateAsync(id, nationalTeams);
             return NoContent();
         }
 
-        // POST: api/NationalTeams
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<NationalTeam>> PostNationalTeam(NationalTeam nationalTeam)
+        [HttpPost("{id}/add-footballer")]
+        public async Task<IActionResult> AddFootballer(int id, [FromBody] Footballer footballer)
         {
-            _context.NationalTeams.Add(nationalTeam);
-            await _context.SaveChangesAsync();
+            footballer.NationalTeam = await _unitOfWork.NationalTeamService.GetAsync(id);
+            var createFootballer = await _unitOfWork.FootballerService.CreateAsync(footballer);
 
-            return CreatedAtAction("GetNationalTeam", new { id = nationalTeam.Id }, nationalTeam);
+            return Ok(createFootballer);
+        }
+
+        // POST: api/NationalTeams
+        [HttpPost]
+        public async Task<ActionResult<NationalTeam>> PostNationalTeam(NationalTeam nationalTeams)
+        {
+            var createdNationalTeam = await _unitOfWork.NationalTeamService.CreateAsync(nationalTeams);
+            return Ok(createdNationalTeam);
         }
 
         // DELETE: api/NationalTeams/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteNationalTeam(int id)
         {
-            var nationalTeam = await _context.NationalTeams.FindAsync(id);
-            if (nationalTeam == null)
-            {
-                return NotFound();
-            }
-
-            _context.NationalTeams.Remove(nationalTeam);
-            await _context.SaveChangesAsync();
-
+            await _unitOfWork.NationalTeamService.DeleteAsync(id);
             return NoContent();
-        }
-
-        private bool NationalTeamExists(int id)
-        {
-            return _context.NationalTeams.Any(e => e.Id == id);
         }
     }
 }
