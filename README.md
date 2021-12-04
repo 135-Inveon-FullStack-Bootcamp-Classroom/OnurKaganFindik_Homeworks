@@ -14,4 +14,4 @@
 
 ## 6. Hafta DotNet WebApi IMDb_Clone ödevi; Ödevde kullanılan teknolojiler; .Net Core, Entity Framework
 
-## 6. Hafta DotNet WebApi FootballManagerApi; Ödevde kullanılan teknolojiler; .Net Core, Entity Framework
+## 7. Hafta DotNet WebApi FootballManagerApi; Ödevde kullanılan teknolojiler; .Net Core, Entity Framework
