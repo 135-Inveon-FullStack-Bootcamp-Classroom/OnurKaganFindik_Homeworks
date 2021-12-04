@@ -1,5 +1,6 @@
 ﻿using FootballManagerApi.Data;
 using FootballManagerApi.Entities;
+using FootballManagerApi.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -12,95 +13,51 @@ namespace FootballManagerApi.Controllers
     [ApiController]
     public class PositionsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public PositionsController(ApplicationDbContext context)
+        public PositionsController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: api/Positions
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Position>>> GetPositions()
         {
-            return await _context.Positions.ToListAsync();
+            var positions = await _unitOfWork.PositionService.GetAllAsync();
+            return Ok(positions);
         }
 
         // GET: api/Positions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Position>> GetPosition(int id)
         {
-            var position = await _context.Positions.FindAsync(id);
-
-            if (position == null)
-            {
-                return NotFound();
-            }
-
-            return position;
+            var position = await _unitOfWork.PositionService.GetAsync(id);
+            return Ok(position);
         }
 
         // PUT: api/Positions/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPosition(int id, Position position)
         {
-            if (id != position.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(position).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PositionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            await _unitOfWork.PositionService.UpdateAsync(id, position);
             return NoContent();
         }
 
         // POST: api/Positions
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Position>> PostPosition(Position position)
         {
-            _context.Positions.Add(position);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetPosition", new { id = position.Id }, position);
+            var createdPosition = await _unitOfWork.PositionService.CreateAsync(position);
+            return Ok(createdPosition);
         }
 
         // DELETE: api/Positions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePosition(int id)
         {
-            var position = await _context.Positions.FindAsync(id);
-            if (position == null)
-            {
-                return NotFound();
-            }
-
-            _context.Positions.Remove(position);
-            await _context.SaveChangesAsync();
-
+            await _unitOfWork.PositionService.DeleteAsync(id);
             return NoContent();
-        }
-
-        private bool PositionExists(int id)
-        {
-            return _context.Positions.Any(e => e.Id == id);
         }
     }
 }

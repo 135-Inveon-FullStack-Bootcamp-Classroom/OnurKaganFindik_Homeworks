@@ -56,25 +56,7 @@ namespace FootballManagerApi.ServiceImplementations
             }
             _context.Entry(position).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PositionExists(id))
-                {
-                    throw new Exception($"Id'si '{id}' olan Posisyon bulunamadı");
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
-        private bool PositionExists(int id)
-        {
-            return _context.Positions.Any(e => e.Id == id);
         }
     }
+
 }
